@@ -1,0 +1,23 @@
+<section class="product" style="padding-top:3rem;">
+  <div class="page-width">
+    <h1 class="section-header__title" style="text-align:left;margin-bottom:2.5rem;">{{ blog.title }}</h1>
+    <div class="steps-grid">
+      {%- for article in blog.articles -%}
+        <a href="{{ article.url }}" class="step" style="text-decoration:none;color:inherit;">
+          <div class="step__image-wrap">
+            {%- if article.image -%}
+              <img class="step__image" src="{{ article.image | image_url: width: 800 }}" alt="{{ article.title | escape }}" loading="lazy">
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'step__image' }}
+            {%- endif -%}
+          </div>
+          <h3 class="step__title">{{ article.title }}</h3>
+          <p class="step__text">{{ article.excerpt_or_content | strip_html | truncatewords: 20 }}</p>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{ "name": "Blog", "settings": [] }
+{% endschema %}

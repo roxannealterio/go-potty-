@@ -1,0 +1,10 @@
+{
+  "theme_info": {
+    "name": "GoPotty",
+    "settings_schema": {
+      "branding": "Branding",
+      "colors": "Colors",
+      "typography": "Typography"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{%- if section.settings.enabled -%}
+<div class="social-proof" data-social-proof aria-live="polite" aria-atomic="true">
+  <div class="social-proof__card">
+    <div class="social-proof__avatar" data-sp-avatar></div>
+    <div class="social-proof__content">
+      <div class="social-proof__line"><strong data-sp-name></strong> <span data-sp-action></span></div>
+      <div class="social-proof__product" data-sp-product></div>
+      <div class="social-proof__meta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span data-sp-time></span>
+        <span class="social-proof__verified">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Verified
+        </span>
+      </div>
+    </div>
+    <button class="social-proof__close" data-sp-close aria-label="Dismiss">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  window.GoPottySocialProof = {
+    enabled: true,
+    interval: {{ section.settings.interval | default: 15 }},
+    duration: {{ section.settings.duration | default: 6 }},
+    initialDelay: {{ section.settings.initial_delay | default: 8 }},
+    names: [
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'person' -%}
+          {
+            name: {{ block.settings.name | json }},
+            city: {{ block.settings.city | json }},
+            product: {{ block.settings.product | json }},
+            time: {{ block.settings.time | json }},
+            initials: {{ block.settings.name | split: ' ' | first | slice: 0 | append: '' | json }},
+            color: {{ block.settings.color | json }}
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  };
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Social proof",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable live purchase notifications", "default": true },
+    { "type": "range", "id": "initial_delay", "label": "Initial delay (seconds)", "min": 3, "max": 30, "step": 1, "default": 8 },
+    { "type": "range", "id": "interval", "label": "Time between notifications (seconds)", "min": 8, "max": 60, "step": 1, "default": 18 },
+    { "type": "range", "id": "duration", "label": "How long each shows (seconds)", "min": 3, "max": 12, "step": 1, "default": 6 }
+  ],
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Notification",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "Sarah M." },
+        { "type": "text", "id": "city", "label": "City", "default": "Sydney" },
+        { "type": "text", "id": "product", "label": "Product", "default": "GoPotty Self-Cleaning Potty" },
+        { "type": "text", "id": "time", "label": "Time ago", "default": "2 minutes ago" },
+        {
+          "type": "select", "id": "color", "label": "Avatar color", "default": "teal",
+          "options": [
+            { "value": "teal", "label": "Teal" },
+            { "value": "amber", "label": "Amber" },
+            { "value": "coral", "label": "Coral" },
+            { "value": "purple", "label": "Purple" },
+            { "value": "pink", "label": "Pink" }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Social proof",
+      "blocks": [
+        { "type": "person", "settings": { "name": "Sarah M.", "city": "Sydney", "product": "GoPotty Self-Cleaning Potty", "time": "2 minutes ago", "color": "teal" } },
+        { "type": "person", "settings": { "name": "Liam K.", "city": "Melbourne", "product": "GoPotty Self-Cleaning Potty", "time": "4 minutes ago", "color": "amber" } },
+        { "type": "person", "settings": { "name": "Emma R.", "city": "Brisbane", "product": "GoPotty + Fake Grass Bundle", "time": "7 minutes ago", "color": "coral" } },
+        { "type": "person", "settings": { "name": "Noah T.", "city": "Perth", "product": "GoPotty Self-Cleaning Potty", "time": "11 minutes ago", "color": "purple" } },
+        { "type": "person", "settings": { "name": "Olivia W.", "city": "Adelaide", "product": "Fake Grass Overlay", "time": "14 minutes ago", "color": "pink" } },
+        { "type": "person", "settings": { "name": "Jack H.", "city": "Gold Coast", "product": "GoPotty Self-Cleaning Potty", "time": "18 minutes ago", "color": "teal" } },
+        { "type": "person", "settings": { "name": "Mia C.", "city": "Newcastle", "product": "GoPotty + Fake Grass Bundle", "time": "22 minutes ago", "color": "amber" } },
+        { "type": "person", "settings": { "name": "William P.", "city": "Canberra", "product": "GoPotty Self-Cleaning Potty", "time": "25 minutes ago", "color": "coral" } },
+        { "type": "person", "settings": { "name": "Charlotte F.", "city": "Hobart", "product": "GoPotty Self-Cleaning Potty", "time": "31 minutes ago", "color": "purple" } },
+        { "type": "person", "settings": { "name": "Ethan D.", "city": "Darwin", "product": "Fake Grass Overlay", "time": "38 minutes ago", "color": "pink" } },
+        { "type": "person", "settings": { "name": "Ava B.", "city": "Wollongong", "product": "GoPotty Self-Cleaning Potty", "time": "44 minutes ago", "color": "teal" } },
+        { "type": "person", "settings": { "name": "Lucas G.", "city": "Cairns", "product": "GoPotty + Fake Grass Bundle", "time": "52 minutes ago", "color": "amber" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

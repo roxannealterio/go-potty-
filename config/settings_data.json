@@ -1,0 +1,29 @@
+{
+  "current": {
+    "color_bg": "#FAF7F2",
+    "color_bg_alt": "#EAF6F5",
+    "color_text": "#1A2B3C",
+    "color_accent": "#3FBFB7",
+    "color_dark": "#1A2B3C",
+    "contact_email": "contactus@gopotty.au",
+    "contact_phone": "",
+    "contact_address": "",
+    "contact_hours": "Mon–Fri, 9am–5pm AEST",
+    "social_instagram": "https://instagram.com/gopotty.au",
+    "social_tiktok": "",
+    "social_facebook": "",
+    "social_youtube": "",
+    "twitter_handle": "",
+    "google_site_verification": "",
+    "bing_site_verification": ""
+  },
+  "presets": {
+    "GoPotty": {
+      "color_bg": "#FAF7F2",
+      "color_bg_alt": "#EAF6F5",
+      "color_text": "#1A2B3C",
+      "color_accent": "#3FBFB7",
+      "color_dark": "#1A2B3C"
+    }
+  }
+}

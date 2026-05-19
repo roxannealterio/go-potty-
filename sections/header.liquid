@@ -1,0 +1,78 @@
+<header class="site-header" data-header>
+  <div class="page-width site-header__inner">
+    <a href="{{ routes.root_url }}" class="site-header__logo-link" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 320 }}" alt="{{ shop.name }}" width="140" height="44" loading="eager">
+      {%- else -%}
+        {% render 'logo' %}
+      {%- endif -%}
+    </a>
+
+    <nav class="site-nav" aria-label="Main">
+      {%- if section.settings.menu != blank and section.settings.menu.links.size > 0 -%}
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}" {% if link.active %}class="is-active"{% endif %}>{{ link.title | upcase }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ routes.root_url }}" class="is-active">HOME</a>
+        <a href="/collections/all">SHOP</a>
+        <a href="/#how-it-works">HOW IT WORKS</a>
+        <a href="/#reviews">REVIEWS</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/pages/contact">CONTACT</a>
+      {%- endif -%}
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="{{ routes.account_url }}" class="site-header__icon" aria-label="Account">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        {%- if cart.item_count > 0 -%}<span class="site-header__cart-count">{{ cart.item_count }}</span>{%- endif -%}
+      </a>
+      <a href="{{ section.settings.cta_link }}" class="btn btn--primary site-header__cta">{{ section.settings.cta_text }}</a>
+      <button class="site-header__icon mobile-menu-toggle" data-open-menu aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer__head">
+    <a href="{{ routes.root_url }}" class="site-header__logo-link" aria-label="{{ shop.name }}">
+      {% render 'logo' %}
+    </a>
+    <button class="site-header__icon" data-close-menu aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-drawer__nav">
+    {%- if section.settings.menu != blank and section.settings.menu.links.size > 0 -%}
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {%- endfor -%}
+    {%- else -%}
+      <a href="{{ routes.root_url }}">Home</a>
+      <a href="/collections/all">Shop</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/pages/contact">Contact</a>
+    {%- endif -%}
+    <a href="{{ section.settings.cta_link }}" class="btn btn--primary" style="margin-top:1rem;align-self:flex-start;">{{ section.settings.cta_text }}</a>
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Custom logo image (leave blank to use built-in GoPotty logo)" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "SHOP NOW" },
+    { "type": "url", "id": "cta_link", "label": "Button link" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+/* ============================================
+   GoPotty Theme — Base Styles
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1 0 auto;
+  display: block;
+}
+
+.site-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px; height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.skip-to-content-link:focus {
+  position: absolute;
+  z-index: 9999;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  clip: auto;
+  width: auto;
+  height: auto;
+}
+
+.page-width {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 750px) {
+  .page-width { padding: 0 2.5rem; }
+}
+
+:root {
+  --color-bg: #FAF7F2;
+  --color-bg-alt: #EAF6F5;
+  --color-text: #1A2B3C;
+  --color-text-muted: #5A6B7C;
+  --color-accent: #3FBFB7;
+  --color-accent-dark: #2BA39C;
+  --color-accent-light: #C8EDEA;
+  --color-border: #E4DFD4;
+  --color-dark: #1A2B3C;
+}
+
+
+#shopify-section-newsletter-popup,
+#shopify-section-social-proof {
+  display: contents;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.site-footer {
+  margin-bottom: 0 !important;
+  padding-bottom: 1.5rem;
+}
+
+body::after {
+  content: '';
+  display: none;
+}

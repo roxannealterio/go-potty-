@@ -1,0 +1,7 @@
+{% layout 'theme' %}
+<section class="product"><div class="page-width" style="max-width:480px;"><h1 class="section-header__title">Activate account</h1>
+{% form 'activate_customer_password' %}{{ form.errors | default_errors }}
+<input type="password" name="customer[password]" placeholder="Password" class="newsletter__input" required style="width:100%;margin-bottom:1rem;">
+<input type="password" name="customer[password_confirmation]" placeholder="Confirm" class="newsletter__input" required style="width:100%;margin-bottom:1rem;">
+<button type="submit" class="btn btn--primary">ACTIVATE</button>
+{% endform %}</div></section>

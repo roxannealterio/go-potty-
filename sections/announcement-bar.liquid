@@ -1,0 +1,94 @@
+<div class="announcement-bar announcement-bar--{{ section.settings.animation_style }}" role="region" aria-label="Announcement">
+  {%- if section.settings.animation_style == 'marquee' -%}
+    <div class="announcement-bar__marquee">
+      <div class="announcement-bar__track">
+        {%- for i in (1..4) -%}
+          {%- for block in section.blocks -%}
+            <span class="announcement-bar__item" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != 'none' -%}{% render 'announcement-icon', icon: block.settings.icon %}{%- endif -%}
+              <span>{{ block.settings.text }}</span>
+            </span>
+            <span class="announcement-bar__sep" aria-hidden="true">✦</span>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- elsif section.settings.animation_style == 'rotate' -%}
+    <div class="announcement-bar__rotate" data-rotate-interval="{{ section.settings.rotate_interval | times: 1000 }}">
+      {%- for block in section.blocks -%}
+        <div class="announcement-bar__slide {% if forloop.first %}is-active{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}{% render 'announcement-icon', icon: block.settings.icon %}{%- endif -%}
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    {%- assign first_block = section.blocks.first -%}
+    {%- if first_block.settings.icon != 'none' -%}{% render 'announcement-icon', icon: first_block.settings.icon %}{%- endif -%}
+    <span>{{ first_block.settings.text }}</span>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation_style",
+      "label": "Animation style",
+      "default": "rotate",
+      "options": [
+        { "value": "static", "label": "Static (single message)" },
+        { "value": "rotate", "label": "Rotate (fade between messages)" },
+        { "value": "marquee", "label": "Marquee (continuous scroll)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "rotate_interval",
+      "label": "Rotate interval (seconds)",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "info": "Only applies to rotate style"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "FREE SHIPPING ON ALL ORDERS OVER $99" },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "truck",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "paw", "label": "Paw" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "star", "label": "Star" },
+            { "value": "gift", "label": "Gift" },
+            { "value": "heart", "label": "Heart" }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Announcement bar",
+      "blocks": [
+        { "type": "message", "settings": { "icon": "truck", "text": "FREE SHIPPING ON ALL ORDERS OVER $99" } },
+        { "type": "message", "settings": { "icon": "shield", "text": "14-DAY MONEY-BACK GUARANTEE" } },
+        { "type": "message", "settings": { "icon": "paw", "text": "TRUSTED BY 1,248+ HAPPY PET PARENTS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
