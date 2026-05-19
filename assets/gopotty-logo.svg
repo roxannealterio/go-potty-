@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" aria-label="GoPotty — Smart Potty Solutions">
+  <!-- ===== Mark (dog head + water drop) ===== -->
+  <g transform="translate(200, 0)">
+    <!-- Water drop -->
+    <path d="M 0 30 C 0 30 -22 60 -22 80 C -22 92 -12 102 0 102 C 12 102 22 92 22 80 C 22 60 0 30 0 30 Z" fill="#3FBFB7"/>
+    <path d="M -10 70 C -12 78 -8 86 -2 88" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.55"/>
+
+    <!-- Left ear + top of head -->
+    <path d="M -90 110 C -100 100 -100 86 -86 80 C -78 76 -68 80 -64 88 C -56 100 -40 110 -22 114" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Right ear + top of head -->
+    <path d="M 22 114 C 40 110 56 100 64 88 C 68 80 78 76 86 80 C 100 86 100 100 90 110" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Face / chin outline -->
+    <path d="M -78 124 C -82 156 -70 188 -46 204 C -32 214 -16 218 0 218 C 16 218 32 214 46 204 C 70 188 82 156 78 124" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" fill="none"/>
+
+    <!-- Left eye (winking) -->
+    <path d="M -42 142 C -36 134 -22 134 -16 142" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <!-- Right eye (dot) -->
+    <circle cx="34" cy="142" r="7" fill="#1A2B3C"/>
+
+    <!-- Cheek bumps / muzzle outline -->
+    <path d="M -28 168 C -22 184 -10 192 0 192 C 10 192 22 184 28 168" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+    <!-- Nose -->
+    <ellipse cx="0" cy="172" rx="10" ry="8" fill="#3FBFB7"/>
+
+    <!-- Mouth -->
+    <path d="M 0 180 L 0 192" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 0 192 C -6 200 -14 200 -18 196" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M 0 192 C 6 200 14 200 18 196" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- ===== Wordmark "GoPotty" ===== -->
+  <text x="200" y="290" font-family="'Inter', -apple-system, sans-serif" font-size="62" font-weight="800" text-anchor="middle" letter-spacing="-2.5">
+    <tspan fill="#3FBFB7">Go</tspan><tspan fill="#1A2B3C">Potty</tspan>
+  </text>
+  <text x="343" y="262" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#1A2B3C">™</text>
+
+  <!-- ===== Tagline ===== -->
+  <text x="200" y="325" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="4" text-anchor="middle" fill="#1A2B3C">SMART POTTY SOLUTIONS</text>
+</svg>

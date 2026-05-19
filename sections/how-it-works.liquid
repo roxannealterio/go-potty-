@@ -1,0 +1,57 @@
+<section class="how-it-works">
+  <div class="page-width">
+    <header class="section-header reveal">
+      <h2 class="section-header__title">{{ section.settings.heading }}</h2>
+      <p class="section-header__subtitle">{{ section.settings.subheading }}</p>
+    </header>
+
+    <div class="steps-grid">
+      {%- for block in section.blocks -%}
+        <article class="step reveal" {{ block.shopify_attributes }}>
+          <div class="step__image-wrap">
+            <span class="step__number">{{ forloop.index }}</span>
+            {%- if block.settings.image != blank -%}
+              <img class="step__image" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'step__image' }}
+            {%- endif -%}
+          </div>
+          <h3 class="step__title">{{ block.settings.title }}</h3>
+          <p class="step__text">{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How It Works" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Three simple steps for a cleaner home" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Your dog goes" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "They do their business on the tray." }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "How it works",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Your dog goes", "text": "They do their business on the tray." } },
+        { "type": "step", "settings": { "title": "Auto suction activates", "text": "The liquid drains through the tray and is automatically suctioned into the waste tank." } },
+        { "type": "step", "settings": { "title": "Rinse & reuse", "text": "Simply rinse the tray with water. The system keeps everything hygienic and odor-free." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,79 @@
+{%- comment -%}
+  Usage:
+    {% render 'logo', variant: 'horizontal', height: 44 %}
+    {% render 'logo', variant: 'stacked', height: 180 %}
+    {% render 'logo', variant: 'mark', height: 48 %}
+    {% render 'logo', variant: 'horizontal', light: true %}  (for dark backgrounds)
+{%- endcomment -%}
+
+{%- assign variant = variant | default: 'horizontal' -%}
+{%- assign h = height | default: 44 -%}
+{%- if light -%}
+  {%- assign wordmark_color = '#FFFFFF' -%}
+  {%- assign tagline_color = '#FFFFFF' -%}
+  {%- assign eye_color = '#FFFFFF' -%}
+{%- else -%}
+  {%- assign wordmark_color = '#1A2B3C' -%}
+  {%- assign tagline_color = '#1A2B3C' -%}
+  {%- assign eye_color = '#1A2B3C' -%}
+{%- endif -%}
+
+{%- if variant == 'stacked' -%}
+<svg class="logo logo--stacked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" style="height:{{ h }}px;width:auto;" aria-label="GoPotty — Smart Potty Solutions" role="img">
+  <g transform="translate(200, 0)">
+    <path d="M 0 30 C 0 30 -22 60 -22 80 C -22 92 -12 102 0 102 C 12 102 22 92 22 80 C 22 60 0 30 0 30 Z" fill="#3FBFB7"/>
+    <path d="M -10 70 C -12 78 -8 86 -2 88" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.55"/>
+    <path d="M -90 110 C -100 100 -100 86 -86 80 C -78 76 -68 80 -64 88 C -56 100 -40 110 -22 114" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M 22 114 C 40 110 56 100 64 88 C 68 80 78 76 86 80 C 100 86 100 100 90 110" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M -78 124 C -82 156 -70 188 -46 204 C -32 214 -16 218 0 218 C 16 218 32 214 46 204 C 70 188 82 156 78 124" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <path d="M -42 142 C -36 134 -22 134 -16 142" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="34" cy="142" r="7" fill="{{ eye_color }}"/>
+    <path d="M -28 168 C -22 184 -10 192 0 192 C 10 192 22 184 28 168" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <ellipse cx="0" cy="172" rx="10" ry="8" fill="#3FBFB7"/>
+    <path d="M 0 180 L 0 192" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 0 192 C -6 200 -14 200 -18 196" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M 0 192 C 6 200 14 200 18 196" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="200" y="290" font-family="'Inter', -apple-system, sans-serif" font-size="62" font-weight="800" text-anchor="middle" letter-spacing="-2.5">
+    <tspan fill="#3FBFB7">Go</tspan><tspan fill="{{ wordmark_color }}">Potty</tspan>
+  </text>
+  <text x="343" y="262" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="{{ wordmark_color }}">™</text>
+  <text x="200" y="325" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="4" text-anchor="middle" fill="{{ tagline_color }}">SMART POTTY SOLUTIONS</text>
+</svg>
+
+{%- elsif variant == 'mark' -%}
+<svg class="logo logo--mark" xmlns="http://www.w3.org/2000/svg" viewBox="-110 -10 220 240" style="height:{{ h }}px;width:auto;" aria-label="GoPotty" role="img">
+  <path d="M 0 30 C 0 30 -22 60 -22 80 C -22 92 -12 102 0 102 C 12 102 22 92 22 80 C 22 60 0 30 0 30 Z" fill="#3FBFB7"/>
+  <path d="M -90 110 C -100 100 -100 86 -86 80 C -78 76 -68 80 -64 88 C -56 100 -40 110 -22 114" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 22 114 C 40 110 56 100 64 88 C 68 80 78 76 86 80 C 100 86 100 100 90 110" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M -78 124 C -82 156 -70 188 -46 204 C -32 214 -16 218 0 218 C 16 218 32 214 46 204 C 70 188 82 156 78 124" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <path d="M -42 142 C -36 134 -22 134 -16 142" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <circle cx="34" cy="142" r="7" fill="{{ eye_color }}"/>
+  <path d="M -28 168 C -22 184 -10 192 0 192 C 10 192 22 184 28 168" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <ellipse cx="0" cy="172" rx="10" ry="8" fill="#3FBFB7"/>
+  <path d="M 0 180 L 0 192" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 0 192 C -6 200 -14 200 -18 196" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M 0 192 C 6 200 14 200 18 196" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg>
+
+{%- else -%}
+<svg class="logo logo--horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" style="height:{{ h }}px;width:auto;" aria-label="GoPotty" role="img">
+  <g transform="translate(35, 35) scale(0.22)">
+    <path d="M 0 -110 C 0 -110 -22 -80 -22 -60 C -22 -48 -12 -38 0 -38 C 12 -38 22 -48 22 -60 C 22 -80 0 -110 0 -110 Z" fill="#3FBFB7"/>
+    <path d="M -90 -30 C -100 -40 -100 -54 -86 -60 C -78 -64 -68 -60 -64 -52 C -56 -40 -40 -30 -22 -26" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M 22 -26 C 40 -30 56 -40 64 -52 C 68 -60 78 -64 86 -60 C 100 -54 100 -40 90 -30" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M -78 -16 C -82 16 -70 48 -46 64 C -32 74 -16 78 0 78 C 16 78 32 74 46 64 C 70 48 82 16 78 -16" stroke="#3FBFB7" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <path d="M -42 2 C -36 -6 -22 -6 -16 2" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="34" cy="2" r="7" fill="{{ eye_color }}"/>
+    <path d="M -28 28 C -22 44 -10 52 0 52 C 10 52 22 44 28 28" stroke="#3FBFB7" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <ellipse cx="0" cy="32" rx="10" ry="8" fill="#3FBFB7"/>
+    <path d="M 0 40 L 0 52" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 0 52 C -6 60 -14 60 -18 56" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M 0 52 C 6 60 14 60 18 56" stroke="#3FBFB7" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="80" y="48" font-family="'Inter', -apple-system, sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5">
+    <tspan fill="#3FBFB7">Go</tspan><tspan fill="{{ wordmark_color }}">Potty</tspan>
+  </text>
+  <text x="222" y="22" font-family="'Inter', sans-serif" font-size="10" fill="{{ wordmark_color }}">™</text>
+</svg>
+{%- endif -%}

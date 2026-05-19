@@ -1,0 +1,8 @@
+{% layout 'theme' %}
+<section class="product"><div class="page-width" style="max-width:480px;"><h1 class="section-header__title" style="margin-bottom:1.5rem;">Sign in</h1>
+{% form 'customer_login' %}{{ form.errors | default_errors }}
+<input type="email" name="customer[email]" placeholder="Email" class="newsletter__input" required style="width:100%;margin-bottom:0.75rem;">
+<input type="password" name="customer[password]" placeholder="Password" class="newsletter__input" required style="width:100%;margin-bottom:1rem;">
+<button type="submit" class="btn btn--primary" style="width:100%;">SIGN IN</button>
+<p style="margin-top:1rem;"><a href="/account/register">Create an account</a> · <a href="/account/login#recover">Forgot password?</a></p>
+{% endform %}</div></section>

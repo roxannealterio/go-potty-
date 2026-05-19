@@ -1,0 +1,278 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "A SMARTER WAY TO POTTY",
+        "heading": "The Self-Cleaning Dog Potty",
+        "subheading": "Automatically drains, collects and stores urine so you never have to clean it up again.",
+        "cta_text": "SHOP NOW",
+        "cta_link": "/products/gopotty",
+        "video_url": "#",
+        "video_text": "WATCH VIDEO"
+      },
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "suction",
+            "label": "Auto Suction System"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "water",
+            "label": "Rinse & Clean in Seconds"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "odor",
+            "label": "Odor Control Technology"
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "touch",
+            "label": "Easy to Use One-Touch"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    "trust-band": {
+      "type": "trust-band",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Hygienic & Safe",
+            "text": "Keeps your home fresh and clean"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "No More Cleanup",
+            "text": "Hands-free system handles the mess"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "building",
+            "title": "Perfect for Apartments",
+            "text": "Compact, quiet and discreet design"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "icon": "recycle",
+            "title": "Eco-Friendly",
+            "text": "Uses less water and reduces waste"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {
+        "heading": "How It Works",
+        "subheading": "Three simple steps for a cleaner home"
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Your dog goes",
+            "text": "They do their business on the tray."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Auto suction activates",
+            "text": "The liquid drains through the tray and is automatically suctioned into the waste tank."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Rinse & reuse",
+            "text": "Simply rinse the tray with water. The system keeps everything hygienic and odor-free."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "feature-breakdown": {
+      "type": "feature-breakdown",
+      "settings": {
+        "eyebrow": "BUILT FOR MODERN PET PARENTS",
+        "heading": "Smart design. Smarter living.",
+        "text": "GoPotty is designed to make pet parenting easier, cleaner and more convenient.",
+        "cta_text": "SHOP NOW",
+        "cta_link": "/products/gopotty",
+        "guarantee_text": "14-DAY MONEY-BACK GUARANTEE"
+      },
+      "blocks": {
+        "c1": {
+          "type": "callout",
+          "settings": {
+            "position": "left",
+            "title": "Waste Tank",
+            "text": "Stores liquid waste in a sealed tank"
+          }
+        },
+        "c2": {
+          "type": "callout",
+          "settings": {
+            "position": "left",
+            "title": "Non-Slip Tray",
+            "text": "Comfortable and safe for your dog"
+          }
+        },
+        "c3": {
+          "type": "callout",
+          "settings": {
+            "position": "right",
+            "title": "Control Panel",
+            "text": "One-touch operation for easy use"
+          }
+        },
+        "c4": {
+          "type": "callout",
+          "settings": {
+            "position": "right",
+            "title": "Drainage System",
+            "text": "Powerful suction keeps it clean"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ]
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Loved by Pets. Trusted by Parents.",
+        "rating_text": "4.9/5 from 1,248+ customers"
+      },
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "name": "Jessica L.",
+            "verified_text": "Verified Buyer",
+            "text": "Game changer! No more cleaning up accidents or constant washing. GoPotty keeps my apartment smelling fresh."
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "name": "Daniel M.",
+            "verified_text": "Verified Buyer",
+            "text": "The auto suction system works perfectly. It's so easy to use and keeps my home clean and odor-free."
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "name": "Sophia K.",
+            "verified_text": "Verified Buyer",
+            "text": "My puppy took to it right away. The best purchase I've made for apartment living!"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about GoPotty"
+      },
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "How does the self-cleaning system work?",
+            "answer": "When your dog uses the tray, liquid drains through the non-slip surface and is automatically suctioned into a sealed waste tank. You just empty the tank and rinse the tray with water."
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it suitable for all dog breeds?",
+            "answer": "GoPotty is designed for small to medium breeds up to 20kg. The non-slip surface is comfortable for paws of all sizes."
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "How often do I need to empty the waste tank?",
+            "answer": "The sealed waste tank holds up to a week of typical use for a small dog. We recommend emptying it every 5-7 days for optimal hygiene."
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "What's included in the box?",
+            "answer": "Each GoPotty comes with the base unit, removable tray, waste tank, power adapter, and a quick-start guide."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "What's your return policy?",
+            "answer": "We offer a 14-day change-of-mind return window in addition to your full rights under the Australian Consumer Law. If you're not satisfied, contact us within 14 days of delivery."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "trust-band",
+    "how-it-works",
+    "feature-breakdown",
+    "reviews",
+    "faq"
+  ]
+}
