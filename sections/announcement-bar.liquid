@@ -1,0 +1,17 @@
+<div class="announcement-bar" role="region" aria-label="Announcement">
+  {% if section.settings.show_icon %}
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+  {% endif %}
+  <span>{{ section.settings.text }}</span>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "FREE SHIPPING ON ALL ORDERS OVER $99" },
+    { "type": "checkbox", "id": "show_icon", "label": "Show truck icon", "default": true }
+  ],
+  "presets": [{ "name": "Announcement bar" }]
+}
+{% endschema %}

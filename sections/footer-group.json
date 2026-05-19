@@ -1,0 +1,39 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Join the GoPotty Pack",
+        "text": "Get 10% off your first order plus smart tips for happy, healthy pets.",
+        "button_text": "SUBSCRIBE"
+      }
+    },
+    "benefits-bar": {
+      "type": "benefits-bar",
+      "blocks": {
+        "b1": { "type": "item", "settings": { "icon": "truck", "title": "FREE SHIPPING", "text": "On orders over $99" } },
+        "b2": { "type": "item", "settings": { "icon": "return", "title": "30-DAY RETURNS", "text": "Hassle-free returns" } },
+        "b3": { "type": "item", "settings": { "icon": "warranty", "title": "1 YEAR WARRANTY", "text": "Quality you can trust" } },
+        "b4": { "type": "item", "settings": { "icon": "lock", "title": "SECURE CHECKOUT", "text": "Safe & protected payments" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"]
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "tagline": "Smart Potty Solutions",
+        "about_text": "Engineered to make pet parenting easier. Cleaner homes, happier pets.",
+        "legal_text": "Designed with love."
+      },
+      "blocks": {
+        "m1": { "type": "menu", "settings": { "title": "Shop", "menu": "footer" } },
+        "m2": { "type": "menu", "settings": { "title": "Support", "menu": "footer" } },
+        "m3": { "type": "menu", "settings": { "title": "Company", "menu": "footer" } }
+      },
+      "block_order": ["m1", "m2", "m3"]
+    }
+  },
+  "order": ["newsletter", "benefits-bar", "footer"]
+}

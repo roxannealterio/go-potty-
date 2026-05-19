@@ -1,0 +1,106 @@
+<header class="site-header">
+  <div class="page-width site-header__inner">
+    <a href="{{ routes.root_url }}" class="site-header__logo-link" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 320 }}" alt="{{ shop.name }}" width="140" height="44" loading="eager">
+      {%- else -%}
+        {%- comment -%} Inline SVG logo with brand-color CSS variables {%- endcomment -%}
+        <svg class="site-header__logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" aria-label="GoPotty">
+          <g transform="translate(0, 0) scale(0.5)">
+            <path d="M60 12 C60 12 50 26 50 34 C50 39.5 54.5 44 60 44 C65.5 44 70 39.5 70 34 C70 26 60 12 60 12 Z" fill="var(--color-accent)"/>
+            <path d="M30 52 C28 48 30 42 36 42" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <path d="M36 50 C40 56 46 58 52 58" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <path d="M90 52 C92 48 90 42 84 42" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <path d="M84 50 C80 56 74 58 68 58" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <path d="M46 62 C48 60 52 60 54 62" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="74" cy="62" r="3" fill="var(--color-text)"/>
+            <path d="M38 64 C36 76 42 88 52 92 C56 94 64 94 68 92 C78 88 84 76 82 64" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <ellipse cx="60" cy="76" rx="6" ry="5" fill="var(--color-accent)"/>
+            <path d="M60 81 L60 86 M60 86 C57 88 54 87 53 85 M60 86 C63 88 66 87 67 85" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          </g>
+          <text x="66" y="42" font-family="Inter, -apple-system, sans-serif" font-size="32" font-weight="800" letter-spacing="-1">
+            <tspan fill="var(--color-accent)">Go</tspan><tspan fill="var(--color-text)">Potty</tspan>
+          </text>
+          <text x="190" y="22" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text)">™</text>
+        </svg>
+      {%- endif -%}
+    </a>
+
+    <nav class="site-nav" aria-label="Main">
+      {%- if section.settings.menu != blank -%}
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}" {% if link.active %}class="is-active"{% endif %}>{{ link.title | upcase }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ routes.root_url }}" class="is-active">HOME</a>
+        <a href="{{ routes.all_products_collection_url }}">SHOP</a>
+        <a href="#how-it-works">HOW IT WORKS</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="#faq">FAQ</a>
+      {%- endif -%}
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="{{ routes.account_url }}" class="site-header__icon" aria-label="Account">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        {%- if cart.item_count > 0 -%}<span class="site-header__cart-count">{{ cart.item_count }}</span>{%- endif -%}
+      </a>
+      <a href="{{ section.settings.cta_link }}" class="btn btn--primary site-header__cta">{{ section.settings.cta_text }}</a>
+      <button class="site-header__icon mobile-menu-toggle" data-open-menu aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer__head">
+    <a href="{{ routes.root_url }}" class="site-header__logo-link" aria-label="{{ shop.name }}">
+      <svg class="site-header__logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" style="height:36px;width:auto;">
+        <g transform="translate(0, 0) scale(0.5)">
+          <path d="M60 12 C60 12 50 26 50 34 C50 39.5 54.5 44 60 44 C65.5 44 70 39.5 70 34 C70 26 60 12 60 12 Z" fill="var(--color-accent)"/>
+          <path d="M30 52 C28 48 30 42 36 42 M36 50 C40 56 46 58 52 58 M90 52 C92 48 90 42 84 42 M84 50 C80 56 74 58 68 58" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+          <path d="M46 62 C48 60 52 60 54 62" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="74" cy="62" r="3" fill="var(--color-text)"/>
+          <path d="M38 64 C36 76 42 88 52 92 C56 94 64 94 68 92 C78 88 84 76 82 64" stroke="var(--color-accent)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+          <ellipse cx="60" cy="76" rx="6" ry="5" fill="var(--color-accent)"/>
+        </g>
+        <text x="66" y="42" font-family="Inter, sans-serif" font-size="32" font-weight="800" letter-spacing="-1">
+          <tspan fill="var(--color-accent)">Go</tspan><tspan fill="var(--color-text)">Potty</tspan>
+        </text>
+      </svg>
+    </a>
+    <button class="site-header__icon" data-close-menu aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-drawer__nav">
+    {%- if section.settings.menu != blank -%}
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {%- endfor -%}
+    {%- else -%}
+      <a href="{{ routes.root_url }}">Home</a>
+      <a href="{{ routes.all_products_collection_url }}">Shop</a>
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#faq">FAQ</a>
+    {%- endif -%}
+    <a href="{{ section.settings.cta_link }}" class="btn btn--primary" style="margin-top:1rem;align-self:flex-start;">{{ section.settings.cta_text }}</a>
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Custom logo image (leave blank to use built-in SVG)" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "SHOP NOW" },
+    { "type": "url", "id": "cta_link", "label": "Button link" }
+  ]
+}
+{% endschema %}
