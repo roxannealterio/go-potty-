@@ -1,0 +1,62 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "GoPotty",
+    "theme_version": "1.2.0",
+    "theme_author": "GoPotty AU",
+    "theme_documentation_url": "https://gopotty.au",
+    "theme_support_url": "mailto:contactus@gopotty.au"
+  },
+  {
+    "name": "Branding",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon" },
+      { "type": "image_picker", "id": "share_image", "label": "Default social share image (1200×630px)" }
+    ]
+  },
+  {
+    "name": "Contact info",
+    "settings": [
+      { "type": "text", "id": "contact_email", "label": "Email", "default": "contactus@gopotty.au" },
+      { "type": "text", "id": "contact_phone", "label": "Phone" },
+      { "type": "textarea", "id": "contact_address", "label": "Address" },
+      { "type": "text", "id": "contact_hours", "label": "Business hours", "default": "Mon–Fri, 9am–5pm AEST" }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
+      { "type": "url", "id": "social_tiktok", "label": "TikTok URL" },
+      { "type": "url", "id": "social_facebook", "label": "Facebook URL" },
+      { "type": "url", "id": "social_youtube", "label": "YouTube URL" },
+      { "type": "text", "id": "twitter_handle", "label": "Twitter/X handle (with @)" }
+    ]
+  },
+  {
+    "name": "SEO",
+    "settings": [
+      { "type": "header", "content": "These help search engines understand your store" },
+      { "type": "text", "id": "google_site_verification", "label": "Google Search Console verification code" },
+      { "type": "text", "id": "bing_site_verification", "label": "Bing site verification code" },
+      { "type": "paragraph", "content": "Page-level meta descriptions are set in Shopify Admin → Products / Pages / Collections → SEO section." }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "color_bg", "label": "Background", "default": "#FAF7F2" },
+      { "type": "color", "id": "color_bg_alt", "label": "Background alt", "default": "#EAF6F5" },
+      { "type": "color", "id": "color_text", "label": "Text", "default": "#1A2B3C" },
+      { "type": "color", "id": "color_accent", "label": "Accent (brand teal)", "default": "#3FBFB7" },
+      { "type": "color", "id": "color_dark", "label": "Dark (buttons/footer)", "default": "#1A2B3C" }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      { "type": "font_picker", "id": "type_header_font", "label": "Heading font", "default": "assistant_n4" },
+      { "type": "font_picker", "id": "type_body_font", "label": "Body font", "default": "assistant_n4" }
+    ]
+  }
+]

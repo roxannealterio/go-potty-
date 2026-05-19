@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "upsell_enabled": true,
+        "upsell_product": "fake-grass-overlay",
+        "upsell_badge": "PERFECT MATCH",
+        "upsell_heading": "Complete your setup",
+        "upsell_text": "Add a realistic fake grass overlay for a more natural feel your dog will love. Snaps right on, easy to rinse."
+      }
+    }
+  },
+  "order": ["main"]
+}
