@@ -1,5 +1,0 @@
-{% layout 'theme' %}
-<section class="product"><div class="page-width"><h1 class="section-header__title" style="text-align:left;">Order {{ order.name }}</h1>
-<p style="color:var(--color-text-muted);">Placed on {{ order.created_at | date: "%b %d, %Y" }}</p>
-<p style="margin-top:1rem;">Total: {{ order.total_price | money }}</p>
-</div></section>
